@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+	color: #732C7B;
+	font-size: 100%;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    border: 0px none;
+    font-family: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    text-rendering: optimizelegibility !important;
+    margin: 0px;
+    outline: 0px none;
+    padding: 0px;
+    vertical-align: baseline;
+    color: #732C7B;
+}
+body {
+  overflow: auto;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.5;
+  cursor: auto;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  color: #732C7B;
+  text-rendering: optimizeLegibility;
+  line-height: 1.4;
+}
+/* BG */
+
+	#bg {
+		-moz-animation: bg 60s linear infinite;
+		-webkit-animation: bg 60s linear infinite;
+		-o-animation: bg 60s linear infinite;
+		-ms-animation: bg 60s linear infinite;
+		animation: bg 60s linear infinite;
+		-moz-backface-visibility: hidden;
+		-webkit-backface-visibility: hidden;
+		-o-backface-visibility: hidden;
+		-ms-backface-visibility: hidden;
+		backface-visibility: hidden;
+		-moz-transform: translate3d(0,0,0);
+		-webkit-transform: translate3d(0,0,0);
+		-o-transform: translate3d(0,0,0);
+		-ms-transform: translate3d(0,0,0);
+		transform: translate3d(0,0,0);
+		/* Set your background with this */
+		background: #FFF image-url("bg03_lossless_compression.jpg") bottom left;
+		background-repeat: repeat-x;
+		height: 100%;
+		left: 0;
+		opacity: 1;
+		position: fixed;
+		top: 0;
+	}
+	@-moz-keyframes bg { 0% { -moz-transform: translate3d(0,0,0); -webkit-transform: translate3d(0,0,0); -o-transform: translate3d(0,0,0); -ms-transform: translate3d(0,0,0); transform: translate3d(0,0,0); } 100% { -moz-transform: translate3d(-2250px,0,0); -webkit-transform: translate3d(-2250px,0,0); -o-transform: translate3d(-2250px,0,0); -ms-transform: translate3d(-2250px,0,0); transform: translate3d(-2250px,0,0); } }
+	@-webkit-keyframes bg { 0% { -moz-transform: translate3d(0,0,0); -webkit-transform: translate3d(0,0,0); -o-transform: translate3d(0,0,0); -ms-transform: translate3d(0,0,0); transform: translate3d(0,0,0); } 100% { -moz-transform: translate3d(-2250px,0,0); -webkit-transform: translate3d(-2250px,0,0); -o-transform: translate3d(-2250px,0,0); -ms-transform: translate3d(-2250px,0,0); transform: translate3d(-2250px,0,0); } }
+	@-o-keyframes bg { 0% { -moz-transform: translate3d(0,0,0); -webkit-transform: translate3d(0,0,0); -o-transform: translate3d(0,0,0); -ms-transform: translate3d(0,0,0); transform: translate3d(0,0,0); } 100% { -moz-transform: translate3d(-2250px,0,0); -webkit-transform: translate3d(-2250px,0,0); -o-transform: translate3d(-2250px,0,0); -ms-transform: translate3d(-2250px,0,0); transform: translate3d(-2250px,0,0); } }
+	@-ms-keyframes bg { 0% { -moz-transform: translate3d(0,0,0); -webkit-transform: translate3d(0,0,0); -o-transform: translate3d(0,0,0); -ms-transform: translate3d(0,0,0); transform: translate3d(0,0,0); } 100% { -moz-transform: translate3d(-2250px,0,0); -webkit-transform: translate3d(-2250px,0,0); -o-transform: translate3d(-2250px,0,0); -ms-transform: translate3d(-2250px,0,0); transform: translate3d(-2250px,0,0); } }
+	@keyframes bg { 0% { -moz-transform: translate3d(0,0,0); -webkit-transform: translate3d(0,0,0); -o-transform: translate3d(0,0,0); -ms-transform: translate3d(0,0,0); transform: translate3d(0,0,0); } 100% { -moz-transform: translate3d(-2250px,0,0); -webkit-transform: translate3d(-2250px,0,0); -o-transform: translate3d(-2250px,0,0); -ms-transform: translate3d(-2250px,0,0); transform: translate3d(-2250px,0,0); } }
+
+	#bg {
+		background-size: 2250px auto;
+		width: 6750px;
+	}
+
+/* Overlay */
+	@-moz-keyframes overlay { 0% { opacity: 0; } 100% { opacity: 1; } }
+	@-webkit-keyframes overlay { 0% { opacity: 0; } 100% { opacity: 1; } }
+	@-o-keyframes overlay { 0% { opacity: 0; } 100% { opacity: 1; } }
+	@-ms-keyframes overlay { 0% { opacity: 0; } 100% { opacity: 1; } }
+	@keyframes overlay { 0% { opacity: 0; } 100% { opacity: 1; } }
+
+	#overlay {
+		-moz-animation: overlay 1s forwards;
+		-webkit-animation: overlay 1s forwards;
+		-o-animation: overlay 1s forwards;
+		-ms-animation: overlay 1s forwards;
+		animation: overlay 1s forwards;
+		background-attachment: fixed;
+		background-image: image_url("overlay-pattern.png");
+		background-position: top left;
+		background-repeat: repeat;
+		background-size: auto;
+		height: 100%;
+		left: 250px;
+		opacity: 0;
+		position: fixed;
+		top: 0;
+		width: 100%;
+	}
+hr {
+  width: 60%;
+  border-top-color: rgb(115,44,123);
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-right-color: rgb(115,44,123);
+  border-right-style: solid;
+  border-right-width: 0px;
+  border-bottom-color: rgb(115,44,123);
+  border-bottom-style: solid;
+  border-bottom-width: 0px;
+  border-left-color: rgb(115,44,123);
+  border-left-style: solid;
+  border-left-width: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  border-top-width: 1px;
+  border-right-width: 0px;
+  border-bottom-width: 0px;
+  border-left-width: 0px;
+}
+@media (max-width:768px) {
+	#overlay {
+		left: 30px;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+	}
+}	
+#overlay.toggled {
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  left: 250px !important;
+}
