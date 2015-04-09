@@ -6,10 +6,10 @@
     <meta name="description" content="Portfolio of ALXS Design featuring 2 new responsive navigation templates using Zurb Foundation framework. The templates are available for demonstration and free download.">
     <meta name="keywords" content="ALXS Design, Zurb Foundation, Responsive Design, Responsive Navigation">
     <meta name="author" content="Alex Scott">
-    <meta property="og:url" content="http://alxs.co.uk/" />
-    <meta property="og:image" content="http://alxs.co.uk/assets/cover2.png" >
-    <meta property="og:description" content="Portfolio of ALXS Design featuring 2 new responsive navigation templates using Zurb Foundation framework. The templates are available for demonstration and free download.">
-    <meta property="og:title" content="ALXS Design">
+    <meta property="og:url" content="http://alxs.co.uk/<%= content_for?(:path) ? yield(:path) : "" %>" />
+    <meta property="og:image" content="<%= content_for?(:ogimage) ? yield(:ogimage) : "http://alxs.co.uk/assets/cover2.png" %>" >
+    <meta property="og:description" content="<%= content_for?(:ogdescription) ? yield(:ogdescription) : "Portfolio of ALXS Design featuring 2 new responsive navigation templates using Zurb Foundation framework. The templates are available for demonstration and free download." %>">
+    <meta property="og:title" content="<%= content_for?(:title) ? yield(:title) : "ALXS Design" %>">
     <meta property="og:type" content="website" />
     <title><%= content_for?(:title) ? yield(:title) : "ALXS Design" %></title>
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
