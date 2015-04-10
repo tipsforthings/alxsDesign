@@ -1,4 +1,5 @@
 class MainController < ApplicationController
+  has_mobile_fu
   def home
   end
 

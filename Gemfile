@@ -17,8 +17,8 @@ gem 'foundation-rails'
 gem 'mail_form'
 gem 'simple_form'
 gem 'passenger', '4.0.57'
-gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0'
+gem 'mobile-fu'
 
 group :development, :test do
   gem 'byebug'
