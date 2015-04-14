@@ -1,45 +1,60 @@
 <div id="sidebar-wrapper">
   <ul>
-    <li class="toggle-menu">
-      <a class="" id="menu-toggle">
-        <span class="fa fa-arrow-right" alt="Menu Toggle"></span>
-        <span class="fa fa-arrow-left" alt="Menu Toggle"></span>
-      </a>
-    </li>
     
-    <li class="sidebar-brand">
-      <%= link_to 'ALXS Design', root_path %>
+    <li class="sidebarLink sidebar-brand">
+      <%= link_to root_path do %>ALXS Design
+        <span class="fa fa-arrow-right menuToggle" alt="Menu Toggle"></span>
+        <span class="fa fa-arrow-left menuToggle" alt="Menu Toggle"></span>
+      <% end %>
+
     </li>
-    <li>
+    <li class="sidebarLink">
       <%= link_to root_path do %>Home<span class="fa fa-home" alt="Dashboard"></span><% end %>
     </li>
-    <li>
+    <li class="sidebarLink">
       <%= link_to about_path do %>About<span class="fa fa-newspaper-o" alt="About"></span><% end %>
     </li>
-    <li>
+    <li class="sidebarLink">
+      <%= link_to blog_path do %>Blog<span class="fa fa-bookmark" alt="Blog"></span><% end %>
+    </li>
+    <li class="sidebarLink">
       <%= link_to contact_path, id: "contact" do %>Contact<span class="fa fa-envelope" alt="Contact"></span><% end %>
     </li>
-    <li>
-      <%= link_to portfolio_path, id: "portfolio" do %>Portfolio<span class="fa fa-pencil" alt="Portfolio"></span><% end %>
+    <li class="sidebarLink">
+      <%= link_to portfolio_path, id: "portfolio" do %>Portfolio<span class="fa fa-th-large" alt="Portfolio"></span><% end %>
     </li>
-    <li>
+    <li class="sidebarLink">
       <%= link_to location_path, id: "location" do %>Location<span class="fa fa-map-marker" alt="Location"></span><% end %>
     </li>
     <li>
     <div class="navigation-padding"></div>
     </li>
-    <li class="menu-social">
-      <a href="https://www.facebook.com/alxsdesign" target="_blank">Facebook<span class="fa fa-facebook"></span></a>
-    </li>
-    <li class="menu-social">
-      <a href="https://github.com/tipsforthings" target="_blank">Github<span class="fa fa-github"></span></a>
-    </li>
-    <li class="menu-social">
-      <a href="https://plus.google.com/u/0/116471654573031381012/posts/p/pub" target="_blank">Google+<span class="fa fa-google-plus"></span></a>
-    </li>
-    <li class="menu-social">
-      <a href="https://twitter.com/alxsdesign" target="_blank">Twitter<span class="fa fa-twitter"></span></a>
-    </li>
+    <% if user_signed_in? %>
+      <% if current_user.blogger == true %>
+        <li class="sidebarLink">
+          <%= link_to categories_path, id: "newCategory" do %>Category Manager<span class="fa fa-folder" alt="New Category"></span><% end %>
+        </li>
+        <li class="sidebarLink">
+          <%= link_to new_article_path, id: "newArticle" do %>New Article<span class="fa fa-file" alt="New Article"></span><% end %>
+        </li>
+      <% end %>
+      <li class="sidebarLink">
+        <%= link_to destroy_user_session_path, :method => :delete, id: "logout" do %>Log Out<span class="fa fa-power-off" alt="Log Out"></span><% end %>
+      </li>
+    <%else%>
+      <li>
+        <%= link_to new_user_session_path, id: "login" do %>
+          Log In
+          <span class="fa fa-key" alt="Log In"></span>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to new_user_registration_path, id: "login" do %>
+          Sign Up
+          <span class="fa fa-ticket" alt="Log In"></span>
+        <% end %>
+      </li>
+    <%end%>
 <!--    <li>
       <%= link_to '#' do %>Contact<span class="fi-address-book" alt="Contact"></span><% end %>
     </li> -->

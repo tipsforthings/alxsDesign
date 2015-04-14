@@ -1,0 +1,36 @@
+<% provide(:title, "ALXS Design | Sign Up") %>
+<% provide(:ogdescription, "ALXS Signup Page") %>
+<div id="about" style="overflow: hidden;">
+  <div class="row outer" id="one">
+    <div class="large-4 large-offset-4 medium-6 medium-offset-3 small-10 small-offset-1 columns outer  center">
+      <div class="inner">
+        <h1 class="size-center">Sign Up</h1>
+        <hr />
+
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= f.error_notification %>
+
+          <div class="form-inputs">
+            <%= f.input :username, :inline_label => 'Username', required: true, :placeholder => 'Username' , autofocus: true, label: false %><br />
+            <%= f.input :email, :inline_label => 'Email', required: true, :placeholder => 'Email', label: false %><br />
+            <%= f.input :password, :inline_label => 'Password', required: true, :placeholder => 'Password', label: false %><br />
+            <%= f.input :password_confirmation, :inline_label => 'Password Confirmation', required: true, :placeholder => 'Password Confirmation', label: false %><br />
+          </div>
+
+          <div class="form-actions">
+            <ul class="button-group radius">
+              <li>
+                <%= f.button :submit, "Sign Up", :class => "button tiny" %><br />
+              </li>
+              <%= render "devise/shared/links" %>
+            </ul>
+            <br />
+            <hr />
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+

@@ -17,10 +17,13 @@
 //= require alxsFrontpage
 //= require toggle
 //= require myScripts
+//= require ckeditor/init
 
 $(function() {
   $(document).foundation();
 });
 
 $(document).alxsFrontpage();
+
+
 

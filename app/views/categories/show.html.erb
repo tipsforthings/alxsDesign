@@ -1,0 +1,25 @@
+<% provide(:title, @category.name) %>
+<% provide(:desc, truncate(strip_tags(@category.description.to_s.html_safe), :length => 200, :escape => false) ) %>
+<% provide(:path, "categories/#{@category.id}") %>
+<div id="category">
+  <div class="row outer" id="one">
+    <div class="inner">
+      <div class="large-8 large-offset-2 medium-10 medium-offset-1 small-10 small-offset-1 columns outer">
+        <h3 class="center">
+          <%= @category.name %>
+        </h3>
+        <hr />
+
+        <%= @category.description.html_safe %>
+
+        <ul class="button-group radius">
+          <%= link_to 'Show Articles', categories_path, :class => 'button tiny' %>
+          <%= link_to 'Back', categories_path, :class => 'button tiny info' %>
+          <%= link_to 'Edit', edit_category_path(@category), :class => 'button tiny' %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+

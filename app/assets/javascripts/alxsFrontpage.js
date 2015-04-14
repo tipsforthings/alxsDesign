@@ -18,7 +18,6 @@
 
     $("#home").children(".outer").css({'position': 'absolute',"height":windowHeight+"px",'margin':'0'}).eq(0).css({'top':'0','display':'table'}).children(".read-more").fadeIn(500).end().siblings().css({'top':'100%','display':'none'});
 
-
 /* Page 1 */
 $(".read-less.one").click(function(e){
   e.preventDefault();
@@ -37,6 +36,7 @@ $(".read-less.one").click(function(e){
 $(".read-more.one").click(function(e){
   e.preventDefault();
   $(".read-less.one").fadeOut('500');
+  $("#notice").fadeOut('500');
   $(".read-more.one").fadeOut('500', function() {
     $("#one").animate({'top':'-100%'}, '500', function() {
       $(this).css({'display':'none'});

@@ -1,0 +1,33 @@
+<% provide(:title, "ALXS Design | Sign Up") %>
+<% provide(:ogdescription, "ALXS Signup Page") %>
+<div id="about" style="overflow: hidden;">
+  <div class="row outer" id="one">
+    <div class="large-4 large-offset-4 medium-10 medium-offset-1 small-10 small-offset-1 columns outer  center">
+      <div class="inner">
+        <h1 class="size-center">Forgot your password?</h1>
+        <hr />
+
+        <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+          <%= f.error_notification %>
+
+          <div class="form-inputs">
+            <%= f.input :email, required: true, autofocus: true %><br />
+          </div>
+
+          <div class="form-actions">
+            <ul class="button-group radius">
+              <li>
+                <%= f.button :submit, "Send Reset", :class => "button tiny" %><br />
+              </li>
+              <%= render "devise/shared/links" %>
+            </ul>
+            <br />
+            <hr />
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+

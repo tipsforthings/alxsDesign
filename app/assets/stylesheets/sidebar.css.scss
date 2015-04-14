@@ -1,7 +1,7 @@
 /* Sidebar Styles */
 
 #sidebar-wrapper {
-  font-family: "Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+  font-family: Ubuntu,Roboto,Arial,sans-serif;
   z-index: 1;
   position: fixed;
   top: 0;
@@ -9,12 +9,18 @@
   left: 0;
   width: 250px;
   overflow: hidden;
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0,0,0,0.4);
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
   box-shadow: 0px 0px 3px #732C7B !important;
+  .menuToggle {
+    display: none;
+    visibility: hidden;
+    line-height: 3rem;
+    height: 3rem;
+  }
   ul {
     position: absolute;
     top: 0;
@@ -23,15 +29,15 @@
     padding: 0;
     list-style: none outside none;
     .sidebar-brand {
-      height: 65px;
-      font-size: 18px;
-      line-height: 60px;
-      -webkit-transition: all 0.5s ease;
-      -moz-transition: all 0.5s ease;
-      -o-transition: all 0.5s ease;
-      transition: all 0.5s ease;
+      height: 3.5rem;
+      font-size: 2rem;
+      line-height: 3rem;
       a {
-        color: #999;
+        color: #732C7B;
+        text-shadow: 0px 0px 3px #565656;
+        &:hover {
+          text-shadow: 1px 1px 3px #732C7B;
+        }
       }
     }
     .toggle-menu {
@@ -53,9 +59,9 @@
       }
     }
     li {
-      text-indent: 20px;
-      height: 40px;
-      line-height: 40px;
+      text-indent: 1.5rem;
+      height: 2rem;
+      line-height: 2rem;
       -webkit-transition: all 1s ease;
       -moz-transition: all 1s ease;
       -o-transition: all 1s ease;
@@ -70,14 +76,14 @@
           color: #732C7B;
           float: right;
           padding: 0;
-          width: 50px;
           text-align: center;
           font-style: normal;
           font-weight: normal;
           font-variant: normal;
           text-transform: none;
-          line-height: 40px;
+          line-height: 2rem;
           text-decoration: inherit;
+          width: 2rem;
  	      }
       }
       &:hover {
@@ -124,20 +130,96 @@
     visibility: hidden !important;
     display: none !important;
   }
+  #sidebar-wrapper {
+    ul {
+      .sidebar-brand {
+      }
+      .toggle-menu {
+        visibility: hidden !important;
+        display: none !important;
+        span {
+        }
+      }
+      li {
+        a {
+	        span {
+            text-align: left;
+            float: left;
+   	      }
+        }
+      }
+    }
+  }
 }
 @media (max-width:768px) {
   #sidebar-wrapper {
     left: -220px;
+    width: 250px;
+    overflow: hidden;
+    .fa-arrow-right.menuToggle {
+      visibility: visible;
+      display: block;
+    }
+    .fa-arrow-left.menuToggle {
+      visibility: hidden;
+      display: none;
+    }
     ul {
+      .sidebar-brand {
+        height: 3rem;
+        font-size: 1.5rem;
+        line-height: 3rem;
+      }
+      .toggle-menu {
+        height: 1.5rem;
+        width: 1.5rem;
+        font-size: 1.5rem;
+        visibility: visible;
+        display: block;
+        text-indent: 10px;
+        .fa-arrow-left {
+          visibility: hidden;
+          display: none;
+        }
+        span {
+        }
+      }
       li {
         width: 250px;
+        a {
+	        span {
+            line-height: 2rem;
+            width: 3.5rem;
+   	      }
+        }
       }
-      .sidebar-brand {
-        margin-top: 0px;
+    }
+    &.toggled {
+      ul {
+        li {
+          a {
+            span {
+              float: left !important;
+              width: 2.25rem !important;
+            }
+          }
+        }
       }
+      .fa-arrow-left.menuToggle {
+        visibility: visible;
+        display: block;
+      }
+      .fa-arrow-right.menuToggle {
+        visibility: hidden;
+        display: none;
+      }
+
     }
   }
 }
 .navigation-padding {
   height: 0.1rem;
+}
+.menuToggle {
+  font-size: 1rem !important;
 }

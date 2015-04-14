@@ -1,12 +1,8 @@
 class MainController < ApplicationController
-  has_mobile_fu
   def home
   end
 
   def help
-  end
-
-  def contact
   end
 
   def terms

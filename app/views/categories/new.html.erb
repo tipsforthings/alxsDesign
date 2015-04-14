@@ -1,0 +1,16 @@
+<% provide(:title, "ALXS Design | New Category") %>
+<% provide(:ogdescription, "New category form for ALXS Blog.") %>
+<% provide(:path, "categories/new") %>
+<div id="article">
+  <div class="row outer" id="one">
+    <div id="blogHeader">
+          <h1><span class="alxs-icon">A</span>&nbsp;&nbsp; New Category</h1>
+          <hr />
+    </div>
+    <div class="large-8 large-offset-2 medium-10 medium-offset-1 small-10 small-offset-1 columns outer center">
+      <h1>New Category</h1>
+      <%= render 'form' %>
+      <%= link_to 'Back', categories_path %>
+    </div>
+  </div>
+</div>

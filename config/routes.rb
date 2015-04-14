@@ -1,6 +1,17 @@
 Rails.application.routes.draw do
+  resources :profiles
+
+  resources :categories
+
+  devise_for :users
+  mount Ckeditor::Engine => '/ckeditor'
+
+  resources :articles
+
   resources 'projects'
+  resources 'user_steps'
   match '/about',        to: 'main#about',               via: 'get'
+  match '/blog',        to: 'articles#index',               via: 'get'
   match '/portfolio',        to: 'portfolio#index',               via: 'get'
   match '/contact',        to: 'contacts#new',               via: 'get'
   match '/location',        to: 'main#location',               via: 'get'

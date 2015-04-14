@@ -17,8 +17,12 @@ gem 'foundation-rails'
 gem 'mail_form'
 gem 'simple_form'
 gem 'passenger', '4.0.57'
-gem 'sdoc', '~> 0.4.0'
 gem 'mobile-fu'
+gem 'ckeditor'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'devise', github: 'plataformatec/devise'
+gem 'wicked'
 
 group :development, :test do
   gem 'byebug'

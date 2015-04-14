@@ -1,0 +1,36 @@
+<% provide(:title, "Category Manager") %>
+<% provide(:ogdescription, "Category management for the ALXS blog.") %>
+<% provide(:path, "categories") %>
+<div id="categories">
+  <div class="row outer" id="one">
+    <div id="blogHeader">
+      <h1><span class="alxs-icon">A</span>&nbsp;&nbsp; Category Manager<%= link_to 'New Category', new_category_path, :class => 'button tiny radius newCat' %></h1>
+      
+      <hr />
+    </div>
+    <div class="large-10 large-offset-1 medium-10 medium-offset-1 small-10 small-offset-1 columns outer center">
+      <p id="notice"><%= notice %></p>
+        <% @categories.each do |category| %>
+        <div class="articleContent">
+          <h3><%= link_to category do %><%= category.name %><% end %></h3><br />
+          <p> <%= truncate(strip_tags(category.description.to_s.html_safe), :length => 250, :escape => false) %></p><br />
+          <ul class="button-group radius">
+          
+          
+
+            <% if category.description.length >250 %>
+            <li><%= link_to 'Read More', category, :class => "button tiny info" %></li>
+            <% end %>
+            <% if user_signed_in? %>
+              <li><%= link_to 'Edit', edit_category_path(category), :class => "button tiny info" %></li>
+              <li><%= link_to 'Destroy', category, :class => "button tiny info", method: :delete, data: { confirm: 'Are you sure?' } %></li>
+            <% end %>
+          </ul>
+        </div>
+        <% end %>
+      <br>
+    </div>
+  </div>
+</div>
+
+

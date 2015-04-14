@@ -1,0 +1,12 @@
+<div id="categoryMenu">
+  <div class="menuHeader">
+    <h3>Categories</h3>
+  </div>
+  <div id="categoryMenuList">
+    <ul>
+<% @categories.each do |c| %>
+<li><%= link_to c.name, category_path(c.id) %></li>
+<%end%>
+    </ul>
+  </div>
+</div>

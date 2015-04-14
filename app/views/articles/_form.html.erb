@@ -1,0 +1,22 @@
+<%= simple_form_for(@article) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title, :placeholder => "Title" %><br />
+    <div class="form-group">
+      <%= f.select(:category_id, options_from_collection_for_select(Category.all, :id, :name), {:prompt => 'Please choose category'}, :class => "form-control", :selected => params[:category_id]) %>
+    </div>
+    <%= f.input :article, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'} } %>
+  </div>
+
+  <div class="form-actions">
+    <ul class="button-group radius">
+      <li>
+        <%= link_to 'Cancel', articles_path, :class => "button small info radius" %>
+      </li>
+      <li>
+        <%= f.button :submit, :class => "button small articleButton radius", :value => "Save" %>
+      </li>
+    </ul>
+  </div>
+<% end %>

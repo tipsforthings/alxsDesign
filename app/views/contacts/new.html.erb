@@ -1,15 +1,15 @@
-<% provide(:title, "ALXS Design | Contact Form") %>
+<% provide(:title, "Contact Form") %>
 <% provide(:path, "contact") %>
 <div id="home" class="contact-form">
   <div class="row outer" id="one">
     <div class="inner">
       <div class="large-6 large-offset-3 medium-8 medium-offset-2 small-10 small-offset-1 columns" id="contact-form">
-        <h3>Send us a message...</h3>
+        <h3>Contact Us</h3>
         <hr />
         <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
-          <%= f.input :name, :required => true %>
-          <%= f.input :email, :required => true %>
-          <%= f.input :message, :as => :text, :required => true %>
+          <%= f.input :name, :required => true, :placeholder => 'Name', label: false %><br />
+          <%= f.input :email, :required => true, :placeholder => 'Email', label: false %><br />
+          <%= f.input :message, :as => :text, :input_html => { 'rows' => 5 } , :required => true, :placeholder => 'Send us a message...', label: false %>
           <div class= "hidden">
             <%= f.input :nickname, :hint => 'Leave this field blank!' %>
           </div>

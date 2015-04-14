@@ -1,0 +1,19 @@
+<% provide(:title, "ALXS Design | Edit Category") %>
+<% provide(:ogdescription, "Edit category form for ALXS Blog.") %>
+<% provide(:path, "categories/edit") %>
+<div id="article">
+  <div class="row outer" id="one">
+    <div id="blogHeader">
+          <h1><span class="alxs-icon">A</span>&nbsp;&nbsp; New Category</h1>
+          <hr />
+    </div>
+    <div class="large-8 large-offset-2 medium-10 medium-offset-1 small-10 small-offset-1 columns outer center">
+      <h1>Edit Category</h1>
+      <%= render 'form' %>
+      <ul class="button-group radius">
+        <%= link_to 'Show', @category, :class => 'button tiny' %>
+        <%= link_to 'Back', categories_path, :class => 'button tiny info' %>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<% provide(:title, "Blog") %>
+<% provide(:ogdescription, "ALXS Design | Blog") %>
+<% provide(:path, "articles/new") %>
+<div id="article">
+  <div class="row outer" id="one">
+<div id="blogHeader">
+      <h1><span class="alxs-icon">A</span>&nbsp;&nbsp; Blog</h1>
+      <hr />
+</div>
+    <div class="large-9 medium-9 columns outer center">
+      <p id="notice"><%= notice %></p>
+        <% @articles.each do |article| %>
+        <div class="articleContent">
+          <h3><%= article.title %><span class="articleCategory subheader">&nbsp;&nbsp;&nbsp;<%= article.category.name %></span></h3>
+          <hr style="width: 50%; margin-top: 0.65rem; margin-left: 0; margin-bottom: 1.5rem;" />
+          <p><%= truncate(strip_tags(article.article.to_s.html_safe), :length => 300, :escape => false) %></p><br />
+          <ul class="button-group radius">
+            <% if article.article.length > 300 %>
+            <li><%= link_to 'Read More', article, :class => "button tiny info" %></li>
+            <% end %>
+            <% if user_signed_in? %>
+              <li><%= link_to 'Edit', edit_article_path(article), :class => "button tiny info" %></li>
+              <li><%= link_to 'Destroy', article, :class => "button tiny info", method: :delete, data: { confirm: 'Are you sure?' } %></li>
+            <% end %>
+          </ul>
+        </div>
+        <% end %>
+      <br>
+    </div>
+    <div class="large-3 medium-3 columns outer center rightCol">
+      <%= render 'categories/categories' %>
+    </div>
+  </div>
+</div>
+
+
